@@ -47,10 +47,10 @@ public class PlanService {
 	// This method is called if TEXT_PLAIN is request
 	@POST
 	@Path("{id}")
-	@Consumes(MediaType.TEXT_XML)
+	@Consumes(MediaType.APPLICATION_XML)
 	public Response sayPlainTextHello(@PathParam("id") String id,String xml) throws IOException {
 
-		URL schemaFile = new URL(uriInfo.getBaseUri().toURL(),"../static/plan.xsd");
+		URL schemaFile = new URL(uriInfo.getBaseUri().toURL(),"../static/plans.xsd");
 
 		Source xmlFile = new StreamSource(new StringReader(xml));
 		
